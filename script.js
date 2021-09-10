@@ -11,14 +11,12 @@ Keuzes = [];
 function Kies(event) {
     Clicked(event);
     try {
-    console.log(event);
     Keuze = event.target.alt;
 
     if (Speler == 1) {
         Keuzes.push(Keuze);
         console.log("Speler " + Speler + " koos voor : " + Keuzes[0]);
         Speler ++;
-        
         setTimeout(() => { Welkom.textContent = "Speler 2, maak je keuze:";}, 500);
         setTimeout(Kies, 2000);
     } else {
@@ -30,18 +28,20 @@ function Kies(event) {
         console.log(Keuzes);
         setTimeout(() => { Welkom.textContent = Keuzes[0] + " versus " + Keuzes[1];}, 500);
         setTimeout(() => { Img.forEach(Img => { Img.style.visibility = "hidden";});}, 600);
-        setTimeout(() => { Result(Keuzes) }, 800);
-    }
-
+        setTimeout(() => { Result(Keuzes) }, 800);}
     } catch (Error) {
-        console.log(Error);
+        console.log(Error instanceof TypeError);
     }
-
 }
 
 function Clicked(event) {
+    try {
     event.target.style.boxShadow = "0px 0px 14px 4px #FFDD55";
     setTimeout(() => { event.target.style.boxShadow = "2px 2px 14px 1px #811673"; }, 500);
+    throw new TypeError()
+    } catch (Error) {
+    console.log(Error instanceof TypeError);
+    }
 }
 
 function Result(Keuzes) {
@@ -53,4 +53,3 @@ if ((Keuzes[0] == "schaar" && Keuzes[1] == "papier") || (Keuzes[0] == "steen" &&
     ResultH1.textContent = "Gelijkspel!";
 }
 }
-

@@ -96,4 +96,10 @@ img:hover {
         padding:10px;
         margin:5px;
     }
+     button {
+        width: 50%;
+        height: 50px;
+        left: 25%;
+        bottom:42vh;
+    }
   }

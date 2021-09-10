@@ -45,11 +45,21 @@ function Clicked(event) {
 }
 
 function Result(Keuzes) {
-if ((Keuzes[0] == "schaar" && Keuzes[1] == "papier") || (Keuzes[0] == "steen" && Keuzes[1] == "schaar") || (Keuzes[0] == "papier" && Keuzes[1] == "steen")) {
-    ResultH1.textContent = "Speler 1 wint!";
-} else if ((Keuzes[1] == "schaar" && Keuzes[0] == "papier") || (Keuzes[1] == "steen" && Keuzes[0] == "schaar") || (Keuzes[1] == "papier" && Keuzes[0] == "steen")) {
-    ResultH1.textContent = "Speler 2 wint!"  ;
-} else {
-    ResultH1.textContent = "Gelijkspel!";
+    if ((Keuzes[0] == "schaar" && Keuzes[1] == "papier") || (Keuzes[0] == "steen" && Keuzes[1] == "schaar") || (Keuzes[0] == "papier" && Keuzes[1] == "steen")) {
+        ResultH1.textContent = "Speler 1 wint!";
+    } else if ((Keuzes[1] == "schaar" && Keuzes[0] == "papier") || (Keuzes[1] == "steen" && Keuzes[0] == "schaar") || (Keuzes[1] == "papier" && Keuzes[0] == "steen")) {
+        ResultH1.textContent = "Speler 2 wint!";
+    } else {
+        ResultH1.textContent = "Gelijkspel!";
+    }
+    console.log("hier");
+    setTimeout(ResetBTN, 500);
 }
+
+function ResetBTN() {
+    var newButton = document.createElement("button")
+    newButton.innerHTML = "Speel opnieuw!";
+    newButton.setAttribute("onclick", "window.location.reload();")
+    document.body.appendChild(newButton);
+    console.log(newButton);
 }

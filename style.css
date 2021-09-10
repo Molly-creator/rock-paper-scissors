@@ -68,7 +68,7 @@ img:hover {
     text-align: center;
     text-decoration-line: underline;
 }
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .pieces {
         flex-flow: column;
     }

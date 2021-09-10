@@ -93,5 +93,6 @@ img:hover {
     img {
         width:100px;
         padding:8px;
+        margin:10px;
     }
   }
